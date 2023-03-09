@@ -10,31 +10,23 @@
 
 <body>
     <script>
-        /////////////////////Exercice 3//////////////////////
-        let copy = prompt("Combien de photocopies avez-vous fait ?");
-
-        let facture = 0;
-
-        if (copy <= 10) {
-            facture = copy * 0.10;
-        }
-        else {
-            facture = 10 * 0.10;
-            copy = copy - 10;
-
-            if (copy <= 20) {
-                facture = facture + copy * 0.09;
+        /////////////////////Exercice 4//////////////////////
+        let age = prompt("Quel est votre âge ?");
+        let sexe = prompt("Quel est votre sexe ? (H ou F)");
+        
+        function impot(age, sexe) {
+            if (sexe == "H" && age > 20) {
+                return "Vous êtes imposable.";
+            }
+            else if (sexe == "F" && age >= 18 && age <= 35) {
+                return "Vous êtes imposable.";
             }
             else {
-                facture = facture + 20 * 0.09;
-                copy = copy - 20;
-                facture = facture + copy * 0.08;
+                return "Vous n'êtes pas imposable.";
             }
         }
 
-        alert("La facture est de : " + facture + " €");
-
-
+        alert(impot(age, sexe));
 
 
     </script>
