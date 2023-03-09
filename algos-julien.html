@@ -10,36 +10,29 @@
 
 <body>
     <script>
-        /////////////////////Exercice 2//////////////////////
-        let heure = prompt("Entrer l'heure");
-        let minute = prompt("Entrer les minutes");
-        let seconde = prompt("Entrer les secondes");
+        /////////////////////Exercice 3//////////////////////
+        let copy = prompt("Combien de photocopies avez-vous fait ?");
 
-        heure = Number(heure);
-        minute = Number(minute);
-        seconde = Number(seconde);
+        let facture = 0;
 
-
-        function calculHeure(heure, minute, seconde) {
-            seconde++;
-
-            if (seconde === 60) {
-                seconde = "00";
-                minute++;
-
-                if (minute === 60) {
-                    minute = "00";
-                    heure++;
-
-                    if (heure === 24) {
-                        heure = 0;
-                    }
-                }
-            }
-            return "Dans 1 seconde il sera " + heure + ":" + minute + ":" + seconde;
+        if (copy <= 10) {
+            facture = copy * 0.10;
         }
-        const newHour = calculHeure(heure, minute, seconde);
-        alert(newHour);
+        else {
+            facture = 10 * 0.10;
+            copy = copy - 10;
+
+            if (copy <= 20) {
+                facture = facture + copy * 0.09;
+            }
+            else {
+                facture = facture + 20 * 0.09;
+                copy = copy - 20;
+                facture = facture + copy * 0.08;
+            }
+        }
+
+        alert("La facture est de : " + facture + " €");
 
 
 
