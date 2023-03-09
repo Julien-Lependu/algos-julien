@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice algo</title>
+</head>
+
+<body>
+    <script>
+        /////////////////////Exercice 2//////////////////////
+        let heure = prompt("Entrer l'heure");
+        let minute = prompt("Entrer les minutes");
+        let seconde = prompt("Entrer les secondes");
+
+        heure = Number(heure);
+        minute = Number(minute);
+        seconde = Number(seconde);
+
+
+        function calculHeure(heure, minute, seconde) {
+            seconde++;
+
+            if (seconde === 60) {
+                seconde = "00";
+                minute++;
+
+                if (minute === 60) {
+                    minute = "00";
+                    heure++;
+
+                    if (heure === 24) {
+                        heure = 0;
+                    }
+                }
+            }
+            return "Dans 1 seconde il sera " + heure + ":" + minute + ":" + seconde;
+        }
+        const newHour = calculHeure(heure, minute, seconde);
+        alert(newHour);
+
+
+
+
+    </script>
+
+</body>
+
+</html>
